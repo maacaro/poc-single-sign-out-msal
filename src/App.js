@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { withAuth } from "./HOC";
 
-function App() {
+function RootApp({ logout }) {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={() => logout()}>Logout</button>
     </div>
   );
 }
-
+const App = withAuth(RootApp);
 export default App;
